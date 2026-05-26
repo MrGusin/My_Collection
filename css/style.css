@@ -1,0 +1,107 @@
+/* LIGHT THEME (Default) */
+:root {
+    --bg-main-1: #ECE3D3;
+    --bg-main-2: #E5DAC5;
+    --border-color: #D8CAB1;
+    --text-primary: #322519;
+    --text-headings: #2A1D10;
+    --accent-primary: #876748;
+    --accent-muted: #9E7D5A;
+}
+
+/* DARK THEME */
+@media (dark) {
+    :root {
+        --bg-main-1: #2A1D10;
+        --bg-main-2: #322519;
+        --border-color: #4F361F;
+        --text-primary: #ECE3D3;
+        --text-headings: #E5DAC5;
+        --accent-primary: #9E7D5A;
+        --accent-muted: #775738;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    scroll-behavior: smooth;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+header i {
+    font-size: 1.3rem;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+.header {
+    background-color: var(--bg-main-1);
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    gap: 20px;
+    font-size: 1.35rem;
+}
+
+.bg-book {
+    width: 100vw;
+    position: absolute;
+}
+
+.bg-fit{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    /* pegar a altura da imagem e colocar como altura dessa div */
+}
+
+.home{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25vw;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.menu-tgl button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
