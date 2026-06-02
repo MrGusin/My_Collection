@@ -36,6 +36,7 @@ html {
     font-weight: 400;
     font-style: normal;
     scroll-behavior: smooth;
+    background-color: var(--bg-main-1);
 }
 
 
@@ -73,42 +74,59 @@ button {
     font-size: 1.35rem;
 }
 
+.home {
+    padding-top: 8px;
+    min-height: 50vh;
+}
+
 .bg-fit {
+    background-image: url("../img/plank-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: inherit;
+    z-index: 1;
+}
+
+.menu {
     display: flex;
+    align-items: center;
     justify-content: center;
-    /* 1. Base the width on the full viewport */
-    width: 100vw;
-    
-    /* 2. Lock the element to a perfect 16:9 proportion */
-    aspect-ratio: 16 / 9; 
-    
-    /* 3. Prevent it from growing taller than the available screen space */
-    max-height: calc(100vh - 70px); 
-    
-    /* 4. Background styling */
-    background-image: url("../img/book_bg_upscaled.png");
+    flex-wrap: wrap;
+    font-size: 2rem;
+    font-weight: 700;
+    gap: 30px;
+    backdrop-filter: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 2;
+    min-width: inherit;
+    min-height: inherit;
+}
+
+.menu-tgl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background-image: url(../img/book_bg_closed-LOWRES.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-color:var(--accent-muted);
+    transition: 0.4s;
+    color: var(--accent-muted);
 }
 
-.home{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25vw;
+.menu-tgl:hover {
+    background-image: url(../img/book_bg-LOWRES.png);
+    color: var(--text-primary);
+    background-color:rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius);
 }
 
-.menu{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.menu-tgl button{
+.menu-tgl button {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,26 +134,34 @@ button {
     width: 100%;
 }
 
-/* gallery */
-.section-title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bg-main-2);
+/* content */
+.active{
+    visibility: visible;
 }
 
+.hidden{
+    display: none;
+}
+
+/* gallery */
 .main-content {
+    margin: 10px;
+    padding: 20px;
+    border-bottom: 2px solid var(--border-color);
+    border-top: 2px solid var(--border-color);
+}
+
+.content{
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
-    flex-wrap: wrap; /* Allows cards to wrap nicely to the next line if you add many */
-    margin: 0 25vw;
-    gap: 20px;
+    justify-content: center;
+    gap: 50px;
 }
 
 .card {
-    width: 200px;
-    height: 200px;
+    width: 280px;
+    height: 280px;
     border-radius: var(--radius);
     overflow: hidden;
     background-color: var(--bg-main-2);
@@ -143,7 +169,7 @@ button {
     transition: 0.3s;
 }
 
-.card:hover{
+.card:hover {
     transform: translateY(-5px);
     border-color: var(--accent-primary);
     box-shadow: 1px 1px 0px 2px rgba(0, 0, 0, 0.3);
@@ -160,9 +186,11 @@ button {
 /* 2. Lock the image container to exactly 70% of the card's total height */
 .card-img img {
     width: 100%;
-    height: 70%; 
-    object-fit: contain; /* Keeps any image aspect ratio safe from distortion */
-    background-color: rgba(0, 0, 0, 0.03); /* Optional: subtle tint behind uneven images */
+    height: 70%;
+    object-fit: contain;
+    /* Keeps any image aspect ratio safe from distortion */
+    background-color: rgba(0, 0, 0, 0.03);
+    /* Optional: subtle tint behind uneven images */
 }
 
 /* 3. Lock the text container to exactly 30% of the card's height */
@@ -172,10 +200,11 @@ button {
     padding: 8px 12px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers your text vertically in its designated zone */
-    
+    justify-content: center;
+    /* Centers your text vertically in its designated zone */
+
     /* Creates a reliable visual gap between the image boundary and the text */
-    margin-top: 4px; 
+    margin-top: 4px;
 }
 
 /* Minor typography tweaks to fit clean inside the 30% space */
@@ -183,7 +212,7 @@ button {
     font-size: 1.2rem;
     line-height: 1.1;
     color: var(--text-headings);
-} 
+}
 
 .card-text p {
     font-size: 0.9rem;

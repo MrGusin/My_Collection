@@ -29,41 +29,196 @@
         <button class="dark-mode-button"><i class="ph ph-cloud-moon"></i></button>
     </header>
     <main>
-        <div class="bg-fit">
-            <div class="home">
+        <div class="home">
+            <div class="bg-fit">
+                <!-- menu -->
                 <div class="menu">
+
                     <!-- botao galeria -->
-                    <div class="galery-tgl menu-tgl">
+                    <button class="galery-tgl menu-tgl" id="galery-btn">
                         <a href="gallery.html">
-                            <button id="galery-btn">
+                            <div >
                                 <i class="ph ph-images-square"></i>
                                 <p>Gallery</p>
-                            </button>
+                            </div>
                         </a>
-                    </div>
+                    </button>
 
                     <!-- botao veiculos -->
-                    <div class="vehicles-tgl menu-tgl">
+                    <button class="vehicles-tgl menu-tgl" id="vehicles-btn">
                         <a href="vehicles.html">
-                            <button class="vehicles-btn">
+                            <div>
                                 <i class="ph ph-engine"></i>
                                 <p>Vehicles</p>
-                            </button>
+                            </div>
                         </a>
-                    </div>
+                    </button>
 
                     <!-- botao experiences -->
-                    <div class="experiences-tgl menu-tgl">
+                    <button class="experiences-tgl menu-tgl" id="experiences-btn">
                         <a href="experiences.html">
-                            <button class="experiences-btn">
+                            <div>
                                 <i class="ph ph-compass-rose"></i>
                                 <p>Experiences</p>
-                            </button>
+                            </div>
                         </a>
-                    </div>
+                    </button>
+
+                    <!-- botao calendar -->
+                    <button class="calendar-tgl menu-tgl" id="calendar-btn">
+                        <a href="experiences.html">
+                            <div>
+                                <i class="ph ph-compass-rose"></i>
+                                <p>Calendar</p>
+                            </div>
+                        </a>
+                    </button>
+
                 </div>
-                <div class="timestamp">
-                    <p>Timestamp</p>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="main-content hidden">
+
+            <!-- gallery -->
+            <div id="gallery-section" class="gallery content hidden">
+                <!-- card 1 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- card 2 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- card 3 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- card 4 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- vehicles -->
+            <div id="vehicles-section" class="vehicles content hidden">
+                <!-- card 1 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- card 2 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- card 3 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- card 4 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- experiences -->
+            <div id="experiences-section" class="experiences content hidden">
+                <!-- card 1 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- card 2 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- card 3 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- card 4 -->
+                <div class="card">
+                    <a target="_blank" class="card-img" href="./img/book_bg_upscaled.png">
+                        <img src="img/book_bg_upscaled.png" alt="">
+                        <div class="card-text">
+                            <h2>acontecimento 1</h2>
+                            <p>01/01/0001</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
