@@ -7,6 +7,8 @@
     --text-headings: #2A1D10;
     --accent-primary: #876748;
     --accent-muted: #9E7D5A;
+
+    --radius: 5px;
 }
 
 /* DARK THEME */
@@ -41,6 +43,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 70px;
     padding: 20px;
 }
 
@@ -70,16 +73,24 @@ button {
     font-size: 1.35rem;
 }
 
-.bg-book {
-    width: 100vw;
-    position: absolute;
-}
-
-.bg-fit{
+.bg-fit {
     display: flex;
     justify-content: center;
+    /* 1. Base the width on the full viewport */
     width: 100vw;
-    /* pegar a altura da imagem e colocar como altura dessa div */
+    
+    /* 2. Lock the element to a perfect 16:9 proportion */
+    aspect-ratio: 16 / 9; 
+    
+    /* 3. Prevent it from growing taller than the available screen space */
+    max-height: calc(100vh - 70px); 
+    
+    /* 4. Background styling */
+    background-image: url("../img/book_bg_upscaled.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:var(--accent-muted);
 }
 
 .home{
@@ -92,8 +103,7 @@ button {
 .menu{
     display: flex;
     flex-direction: column;
-    gap: 2.2rem;
-    justify-content: space-between;
+    justify-content: space-evenly;
     font-size: 2rem;
     font-weight: 700;
 }
@@ -104,4 +114,78 @@ button {
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+/* gallery */
+.section-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-main-2);
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Allows cards to wrap nicely to the next line if you add many */
+    margin: 0 25vw;
+    gap: 20px;
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: var(--bg-main-2);
+    border: 2px solid var(--border-color);
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 1px 1px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 1. Turn the link wrapper into a vertical flexbox container */
+.card-img {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/* 2. Lock the image container to exactly 70% of the card's total height */
+.card-img img {
+    width: 100%;
+    height: 70%; 
+    object-fit: contain; /* Keeps any image aspect ratio safe from distortion */
+    background-color: rgba(0, 0, 0, 0.03); /* Optional: subtle tint behind uneven images */
+}
+
+/* 3. Lock the text container to exactly 30% of the card's height */
+.card-text {
+    height: 30%;
+    width: 100%;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers your text vertically in its designated zone */
+    
+    /* Creates a reliable visual gap between the image boundary and the text */
+    margin-top: 4px; 
+}
+
+/* Minor typography tweaks to fit clean inside the 30% space */
+.card-text h2 {
+    font-size: 1.2rem;
+    line-height: 1.1;
+    color: var(--text-headings);
+} 
+
+.card-text p {
+    font-size: 0.9rem;
+    color: var(--text-primary);
 }
