@@ -134,6 +134,13 @@ button {
     width: 100%;
 }
 
+.tgl-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* content */
 .active{
     visibility: visible;
