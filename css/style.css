@@ -134,23 +134,13 @@ button {
     width: 100%;
 }
 
-.tgl-content{
+.menu-btn-content{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
-
 /* content */
-.active{
-    visibility: visible;
-}
-
-.hidden{
-    display: none;
-}
-
-/* gallery */
 .main-content {
     margin: 10px;
     padding: 20px;
@@ -166,6 +156,14 @@ button {
     gap: 50px;
 }
 
+.section-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
 .card {
     width: 280px;
     height: 280px;
@@ -174,6 +172,10 @@ button {
     background-color: var(--bg-main-2);
     border: 2px solid var(--border-color);
     transition: 0.3s;
+}
+
+.calendar-card{
+    display: flex;
 }
 
 .card:hover {
@@ -224,4 +226,13 @@ button {
 .card-text p {
     font-size: 0.9rem;
     color: var(--text-primary);
+}
+
+/* content visibility */
+.active{
+    visibility: visible;
+}
+
+.hidden{
+    display: none;
 }
