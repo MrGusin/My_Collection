@@ -15,18 +15,25 @@
 <body>
     <header class="header">
         <a href="" class="logo">
-            <i class="ph ph-book-bookmark"></i>
+            <i class="ph ph-book-bookmark"></i> My Collection
         </a>
-        <nav class="nav">
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Section</a></li>
-                <li><a href="">Section</a></li>
-                <li><a href="">Section</a></li>
-                <li><a href="">Section</a></li>
+        <nav class="nav" id="nav">
+            <ul class="nav-list">
+                <li><a id="home-btn" href="#"><i class="ph ph-house"></i>Home</a></li>
+                <li><a id="gallery-btn-nav" href="#gallery-section"><i class="ph ph-images-square"></i> Gallery</a></li>
+                <li id="vehicles-btn-nav"><a href="#vehicles-section"><i class="ph ph-engine"></i> Vehicles</a></li>
+                <li id="experiences-btn-nav"><a href="#experiences-section"><i class="ph ph-compass-rose"></i>
+                        Experiences</a></li>
+                <li id="calendar-btn-nav"><a href="#calendar-section"><i class="ph ph-calendar-blank"></i> Calendar</a>
+                </li>
             </ul>
         </nav>
-        <button class="dark-mode-button"><i class="ph ph-cloud-moon"></i></button>
+        <div class="menu-util">
+            <button class="dark-mode-button" id="theme-toggle"><i class="ph ph-cloud-moon"></i></button>
+            <button class="icon-btn menu-btn" id="menu-btn" aria-label="Abrir Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
     </header>
     <main>
         <div class="home">
@@ -35,51 +42,52 @@
                 <div class="menu">
 
                     <!-- botao galeria -->
-                    <button class="galery-tgl menu-tgl" id="galery-btn">
-                        <a href="gallery.html">
+                    <a href="#gallery-section">
+                        <button class="gallery-tgl menu-tgl" id="gallery-btn">
                             <div class="menu-btn-content">
                                 <i class="ph ph-images-square"></i>
                                 <p>Gallery</p>
                             </div>
-                        </a>
-                    </button>
+                        </button>
+                    </a>
+
 
                     <!-- botao veiculos -->
-                    <button class="vehicles-tgl menu-tgl" id="vehicles-btn">
-                        <a href="vehicles.html">
+                    <a href="#vehicles-section">
+                        <button class="vehicles-tgl menu-tgl" id="vehicles-btn">
                             <div class="menu-btn-content">
                                 <i class="ph ph-engine"></i>
                                 <p>Vehicles</p>
                             </div>
-                        </a>
-                    </button>
+                        </button>
+                    </a>
 
                     <!-- botao experiences -->
-                    <button class="experiences-tgl menu-tgl" id="experiences-btn">
-                        <a href="experiences.html">
+                    <a href="#experiences-section">
+                        <button class="experiences-tgl menu-tgl" id="experiences-btn-menu">
                             <div class="menu-btn-content">
                                 <i class="ph ph-compass-rose"></i>
                                 <p>Experiences</p>
                             </div>
-                        </a>
-                    </button>
+                        </button>
+                    </a>
 
                     <!-- botao calendar -->
-                    <button class="calendar-tgl menu-tgl" id="calendar-btn">
-                        <a href="experiences.html">
+                    <a href="#calendar-section">
+                        <button class="calendar-tgl menu-tgl" id="calendar-btn-menu">
                             <div class="menu-btn-content">
                                 <i class="ph ph-calendar-blank"></i>
                                 <p>Calendar</p>
                             </div>
-                        </a>
-                    </button>
+                        </button>
+                    </a>
 
                 </div>
             </div>
         </div>
 
         <!-- content -->
-        <div class="main-content ">
+        <div class="main-content" id="main-content">
 
             <!-- gallery -->
             <div id="gallery-section" class="gallery content hidden">
@@ -232,7 +240,7 @@
             </div>
 
             <!-- calendar -->
-            <div id="calendar-section" class="calendar content ">
+            <div id="calendar-section" class="calendar content hidden">
                 <div class="section-title">
                     <h1>Calendar</h1>
                 </div>
@@ -293,9 +301,90 @@
                 </div>
             </div>
         </div>
+        <div class="highlights">
+            <section id="numeros" class="stats-section">
+                <div class="stats-container">
+                    <div class="stats-title-block">
+                        <h2>Total Memories registered</h2>
+                        <div class="stats-title-line"></div>
+                        <div class="grid-stats">
+                            <!--  -->
+                            <div class="stat-box">
+                                <i class="ph ph-images-square"></i>
+                                <span class="stat-num" data-target="4" id="stat-gallery">0</span>
+                                <p>Gallery</p>
+                            </div>
+                            <!--  -->
+                            <div class="stat-box">
+                                <i class="ph ph-engine"></i>
+                                <span class="stat-num" data-target="4" id="stat-vehicles">0</span>
+                                <p>Vehicles</p>
+                            </div>
+                            <!--  -->
+                            <div class="stat-box">
+                                <i class="ph ph-compass-rose"></i>
+                                <span class="stat-num" data-target="4" id="stat-experiences">0</span>
+                                <p>Experiences</p>
+                            </div>
+                            <!--  -->
+                            <div class="stat-box">
+                                <i class="ph ph-calendar-blank"></i>
+                                <span class="stat-num" data-target="4" id="stat-calendar">0</span>
+                                <p>Calendar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="upload-section">
+            <div class="upload-text">
+                <h1 class="section-title">Insert new memories</h1>
+                <form action="">
+                    <div class="form-content">
+                        <label for="fact">Fact: </label>
+                        <input type="text" name="fact" id="fact" placeholder="Car n1">
+                    </div>
+                    <div class="form-content">
+                        <label for="date">Date: </label>
+                        <input type="date" name="date" id="date">
+                    </div>
+                </form>
+            </div>
+            <div class="image-section">
+                <div class="upload-image">
+                    <form action="">
+                        <label for="image-attachment">Attach your image:</label>
+                        <input type="file" id="image-attachment" name="uploaded_image" accept="image/*">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <!-- preview -->
+                <div class="preview">
+                    <img id="image-preview" src="#" alt="Image Preview">
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
-
+        <div class="logo">
+            <a href="#">
+                <i class="ph ph-book-bookmark"></i> My Collection
+            </a>
+        </div>
+        <div class="social-col">
+            <h4>Acompanhe</h4>
+            <div class="social-links">
+                <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                <a href="#"><i class="ph ph-linkedin-logo"></i></a>
+                <a href="#"><i class="ph ph-github-logo"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy;Gustavo Chicoski</p>
+            <p>Todos os direitos reservados.</p>
+            <p>Desenvolvedor: Gustavo Chicoski</p>
+        </div>
     </footer>
 </body>
 <script src="./js/script.js"></script>
